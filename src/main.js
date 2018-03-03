@@ -3,7 +3,10 @@ export const search = (query, type) => {
     .then(data => data.json());
 };
 
+export const searchArtists = (query) => {
+  search(query, 'artist');
+};
+
 export const searchAlbums = () => null;
-export const searchArtists = () => null;
 export const searchTracks = () => null;
 export const searchPlaylists = () => null;
