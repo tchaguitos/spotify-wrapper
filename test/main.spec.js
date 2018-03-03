@@ -104,4 +104,79 @@ describe('Spotify Wrapper', () => {
       });
     });
   });
+
+  describe('searchAlbums', () => {
+    let fetchStub;
+    let promise;
+
+    beforeEach(() => {
+      fetchStub = sinon.stub(global, 'fetch');
+      promise = fetchStub.returnsPromise();
+    });
+
+    afterEach(() => fetchStub.restore());
+
+    it('should call fetch method', () => {
+      const albums = searchAlbums('Incubus');
+      expect(fetchStub).to.have.been.calledOnce();
+    });
+
+    it('should receive the correct url to fetch', () => {
+      context('passing one type', () => {
+        const albums = searchAlbums('Muse');
+        expect(fetchStub).to.have.been
+          .calledWith('https://api.spotify.com/v1/search/q=Muse&type=album');
+      });
+    });
+  });
+
+  describe('searchTracks', () => {
+    let fetchStub;
+    let promise;
+
+    beforeEach(() => {
+      fetchStub = sinon.stub(global, 'fetch');
+      promise = fetchStub.returnsPromise();
+    });
+
+    afterEach(() => fetchStub.restore());
+
+    it('should call fetch method', () => {
+      const tracks = searchTracks('Incubus');
+      expect(fetchStub).to.have.been.calledOnce();
+    });
+
+    it('should receive the correct url to fetch', () => {
+      context('passing one type', () => {
+        const tracks = searchTracks('Muse');
+        expect(fetchStub).to.have.been
+          .calledWith('https://api.spotify.com/v1/search/q=Muse&type=track');
+      });
+    });
+  });
+
+  describe('searchPlaylists', () => {
+    let fetchStub;
+    let promise;
+
+    beforeEach(() => {
+      fetchStub = sinon.stub(global, 'fetch');
+      promise = fetchStub.returnsPromise();
+    });
+
+    afterEach(() => fetchStub.restore());
+
+    it('should call fetch method', () => {
+      const playlists = searchPlaylists('Incubus');
+      expect(fetchStub).to.have.been.calledOnce();
+    });
+
+    it('should receive the correct url to fetch', () => {
+      context('passing one type', () => {
+        const playlists = searchPlaylists('Muse');
+        expect(fetchStub).to.have.been
+          .calledWith('https://api.spotify.com/v1/search/q=Muse&type=playlist');
+      });
+    });
+  });
 });

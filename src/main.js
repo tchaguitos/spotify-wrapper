@@ -7,6 +7,14 @@ export const searchArtists = (query) => {
   search(query, 'artist');
 };
 
-export const searchAlbums = () => null;
-export const searchTracks = () => null;
-export const searchPlaylists = () => null;
+export const searchAlbums = (query) => {
+  search(query, 'album');
+};
+
+export const searchTracks = (query) => {
+  search(query, 'track');
+};
+
+export const searchPlaylists = (query) => {
+  search(query, 'playlist');
+};
