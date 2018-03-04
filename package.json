@@ -34,9 +34,11 @@
     "eslint-plugin-import": "^2.9.0",
     "husky": "^0.14.3",
     "mocha": "^5.0.1",
-    "node-fetch": "^2.0.0",
     "sinon": "^4.4.2",
     "sinon-chai": "^2.14.0",
     "sinon-stub-promise": "^4.0.0"
+  },
+  "dependencies": {
+    "node-fetch": "^2.0.0"
   }
 }
