@@ -10,7 +10,7 @@ import sinonStubPromise from 'sinon-stub-promise';
 
 import dirtyChai from 'dirty-chai';
 
-import { search, searchAlbums, searchArtists, searchTracks, searchPlaylists } from '../src/main';
+import { search, searchAlbums, searchArtists, searchTracks, searchPlaylists } from '../src/search';
 
 use(dirtyChai);
 use(sinonChai);
