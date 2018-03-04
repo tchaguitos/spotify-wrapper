@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-unused-vars */
+
 import { use, expect } from 'chai';
 import { describe, it, beforeEach, afterEach } from 'mocha';
 
@@ -76,7 +79,7 @@ describe('Spotify Wrapper', () => {
       promise.resolves({ body: 'json' });
 
       const artists = search('Incubus', 'artist');
-      expect(artists.resolveValue).to.be.eql({ body: 'json' });
+      expect(artists.resolved).to.eql({ body: 'json' });
     });
   });
 
