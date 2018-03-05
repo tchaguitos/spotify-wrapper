@@ -9,7 +9,7 @@
     "test": "./node_modules/.bin/mocha test/**/*.spec.js --require babel-register",
     "test:tdd": "./node_modules/.bin/mocha test/**/*.spec.js --require babel-register --watch --bail -- --reporter=nyan",
     "test:coverage": "nyc npm run test",
-    "coveralls": "test:coverage && nyc report --reporter=text-lcov | coveralls",
+    "coveralls": "npm run test:coverage && nyc report --reporter=text-lcov | coveralls",
     "tdd": "./node_modules/.bin/mocha test/**/*.spec.js --require babel-register --watch",
     "clear": "rimraf lib",
     "build": "npm run clear && ./node_modules/.bin/babel --out-dir lib src",
